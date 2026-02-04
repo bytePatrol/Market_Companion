@@ -35,11 +35,45 @@ A real-time overview of your portfolio: holdings count, watchlist size, VIX prox
 </p>
 
 ### Interactive Charts
-Full candlestick charts with volume bars, multiple timeframes (1D to 1Y), technical indicator overlays, and symbol comparison mode. Click any symbol anywhere in the app to jump straight to its chart.
+Full candlestick charts with volume bars, multiple timeframes (1D to 1Y), 11 built-in technical indicators, volume profile, and symbol comparison mode. Click any symbol anywhere in the app to jump straight to its chart. All indicator parameters are configurable.
 
 <p align="center">
   <img src="screenshots/Chart.png" alt="Chart" width="800">
 </p>
+
+<details>
+<summary><strong>Technical Indicators</strong></summary>
+<br>
+
+**Overlays** — drawn directly on the price chart:
+
+| Indicator | Default Parameters | Description |
+|-----------|-------------------|-------------|
+| SMA | 20-period | Simple Moving Average — smoothed trend line based on closing prices |
+| EMA | 9-period | Exponential Moving Average — trend line weighted toward recent prices |
+| Bollinger Bands | 20-period, 2.0 std dev | Upper, middle, and lower bands showing volatility envelope around price |
+| VWAP | — | Volume Weighted Average Price — institutional benchmark for fair value |
+| Ichimoku Cloud | 9 / 26 / 52 | Full Ichimoku Kinko Hyo system with Tenkan, Kijun, Senkou A & B, and Chikou spans |
+
+**Studies** — rendered in a separate pane below the chart:
+
+| Indicator | Default Parameters | Description |
+|-----------|-------------------|-------------|
+| RSI | 14-period | Relative Strength Index — momentum oscillator ranging 0–100 for overbought/oversold detection |
+| MACD | 12 / 26 / 9 | Moving Average Convergence Divergence — trend and momentum via MACD line, signal line, and histogram |
+| ATR | 14-period | Average True Range — measures market volatility using high-low-close ranges |
+| Stochastic | 14K / 3D | Stochastic Oscillator — compares closing price to the high-low range over a period |
+| OBV | — | On-Balance Volume — cumulative volume flow confirming price trends |
+| ADX | 14-period | Average Directional Index — trend strength with +DI and −DI directional components |
+
+**Volume tools:**
+
+| Tool | Description |
+|------|-------------|
+| Volume Bars | Toggle color-coded volume bars beneath the chart |
+| Volume Profile | Horizontal histogram showing traded volume at each price level |
+
+</details>
 
 ### Heatmap
 Visual, color-coded grid of all your holdings and watchlist symbols. Sort by daily change %, volume, volatility, or sector. Each tile includes a mini sparkline for quick trend recognition.
