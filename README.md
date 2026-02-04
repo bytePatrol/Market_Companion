@@ -56,11 +56,34 @@ Manage your holdings with cost basis tracking and your watchlist with custom rea
 </p>
 
 ### Smart Alerts
-Go beyond simple price alerts. Monitor for volume spikes, trend line breaks, and unusual volatility. Triggered alerts appear in-app and as native macOS notifications.
+Go beyond simple price alerts. Create custom rules from 14 different alert types spanning volume analysis, technical indicators, and candlestick pattern recognition. Triggered alerts appear in-app and as native macOS notifications. A built-in cooldown prevents duplicate alerts within the same hour.
 
 <p align="center">
   <img src="screenshots/Alerts.png" alt="Alerts" width="800">
 </p>
+
+<details>
+<summary><strong>All 14 Alert Types</strong></summary>
+<br>
+
+| Category | Alert Type | What It Detects |
+|----------|-----------|-----------------|
+| **Volume** | Volume Spike | Trading volume exceeding a configurable multiple of the average daily volume |
+| **Trend** | Trend Break | Price crossing a 20-day moving average or breaking prior-day high/low levels |
+| **Volatility** | Unusual Volatility | Intraday range (high minus low) exceeding a multiple of the typical daily range |
+| **Momentum** | RSI Overbought | RSI(14) rising above a threshold (default: 70) |
+| **Momentum** | RSI Oversold | RSI(14) falling below a threshold (default: 30) |
+| **Momentum** | MACD Crossover | MACD histogram crossing the zero line (bullish or bearish) |
+| **Volatility** | Bollinger Squeeze | Bollinger Band bandwidth contracting to a fraction of its average — often precedes a breakout |
+| **Trend** | Price Above MA | Price crossing above a configurable-period simple moving average |
+| **Trend** | Price Below MA | Price crossing below a configurable-period simple moving average |
+| **Pattern** | Bullish Engulfing | A bullish engulfing candlestick pattern — potential reversal signal at support |
+| **Pattern** | Bearish Engulfing | A bearish engulfing candlestick pattern — potential reversal signal at resistance |
+| **Pattern** | Hammer | A hammer candlestick pattern — potential bottoming signal after a decline |
+| **Pattern** | Doji | A doji candlestick pattern — signals market indecision and possible reversal |
+| **Advanced** | Composite | Combine multiple conditions (RSI, volume, price, MACD) with AND logic into a single rule |
+
+</details>
 
 ### Screener
 Filter your universe by change %, win/loss ratio, price range, volume, and more. Toggle between holdings-only and watchlist-only views. Sort results by any metric.
