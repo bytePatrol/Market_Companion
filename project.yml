@@ -1,0 +1,78 @@
+name: MarketCompanion
+options:
+  bundleIdPrefix: com.marketcompanion
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "15.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+packages:
+  GRDB:
+    url: https://github.com/groue/GRDB.swift
+    from: "6.24.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  MarketCompanion:
+    type: application
+    platform: macOS
+    sources:
+      - MarketCompanion
+    resources:
+      - MarketCompanion/Resources/Assets.xcassets
+    dependencies:
+      - package: GRDB
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.marketcompanion.app
+        INFOPLIST_FILE: MarketCompanion/Info.plist
+        PRODUCT_NAME: Market Companion
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: false
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        SWIFT_STRICT_CONCURRENCY: minimal
+        PRODUCT_MODULE_NAME: MarketCompanion
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+
+  MarketCompanionTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - MarketCompanionTests
+    dependencies:
+      - target: MarketCompanion
+      - package: GRDB
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.marketcompanion.tests
+        GENERATE_INFOPLIST_FILE: true
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Market Companion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Market Companion"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+
+schemes:
+  MarketCompanion:
+    build:
+      targets:
+        MarketCompanion: all
+        MarketCompanionTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - MarketCompanionTests
+    profile:
+      config: Release
+    archive:
+      config: Release
