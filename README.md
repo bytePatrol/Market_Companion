@@ -119,12 +119,61 @@ Go beyond simple price alerts. Create custom rules from 14 different alert types
 
 </details>
 
-### Screener
-Filter your universe by change %, win/loss ratio, price range, volume, and more. Toggle between holdings-only and watchlist-only views. Sort results by any metric.
+### Screener & Technical Scanner
+Filter your universe with real-time screener filters, or run multi-criteria technical scans to surface setups across all your symbols. Results are ranked by the number of matched criteria.
 
 <p align="center">
   <img src="screenshots/Screener.png" alt="Screener" width="800">
 </p>
+
+<details>
+<summary><strong>Screener Filters</strong></summary>
+<br>
+
+| Filter | Description |
+|--------|-------------|
+| Min / Max Change % | Daily price change percentage range |
+| Min Volume | Minimum absolute trading volume |
+| Min Volume Ratio | Volume relative to average (e.g., 2.0 = twice the typical daily volume) |
+| Min / Max Price | Absolute price range |
+| Holdings Only | Restrict results to current portfolio positions |
+| Watchlist Only | Restrict results to tracked watchlist symbols |
+
+**Sort options:** Change %, Volume, Price, Volatility (intraday range)
+
+</details>
+
+<details>
+<summary><strong>Technical Scan Patterns (12 criteria)</strong></summary>
+<br>
+
+Build custom scans by combining any of these criteria, or use one of the built-in presets:
+
+| Category | Pattern | What It Detects |
+|----------|---------|-----------------|
+| **Momentum** | RSI Oversold (<30) | RSI has dropped below 30 — potential reversal from oversold conditions |
+| **Momentum** | RSI Overbought (>70) | RSI has risen above 70 — potential reversal from overbought conditions |
+| **Momentum** | MACD Bullish Cross | MACD histogram crossing from negative to positive — bullish momentum shift |
+| **Momentum** | MACD Bearish Cross | MACD histogram crossing from positive to negative — bearish momentum shift |
+| **Volatility** | Bollinger Squeeze | Bandwidth contracting to less than half its 20-period average — breakout may be imminent |
+| **Trend** | Price > SMA(50) | Price trading above the 50-day simple moving average — intermediate uptrend |
+| **Trend** | Price < SMA(50) | Price trading below the 50-day simple moving average — intermediate downtrend |
+| **Trend** | Golden Cross (50/200) | 50-day SMA crossing above the 200-day SMA — long-term bullish signal |
+| **Trend** | Death Cross (50/200) | 50-day SMA crossing below the 200-day SMA — long-term bearish signal |
+| **Volume** | Volume Surge (>2x Avg) | Current volume exceeding twice the average daily volume |
+| **Momentum** | Stochastic Oversold | Stochastic %K dropping below 20 — short-term oversold |
+| **Trend** | ADX Trending (>25) | ADX above 25 indicating a strong directional trend is in play |
+
+**Preset scans:**
+
+| Preset | Combines |
+|--------|----------|
+| Oversold Bounce | RSI Oversold + Stochastic Oversold |
+| Breakout | Price > SMA(50) + Volume Surge + ADX Trending |
+| Momentum | MACD Bullish Cross + Price > SMA(50) |
+| Bearish Setup | RSI Overbought + MACD Bearish Cross |
+
+</details>
 
 ### Research
 Aggregated news feed and earnings calendar for your tracked symbols. Filter by ticker or time range, with sentiment tagging and direct links to source articles.
